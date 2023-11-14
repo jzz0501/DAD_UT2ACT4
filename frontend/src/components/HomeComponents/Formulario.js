@@ -30,6 +30,12 @@ export default function Formulario(props) {
                     <Grid>
                         <Button variant="contained" style={{marginTop: 20}} onClick={() => {
                             fetch(`http://localhost:3030/insert?nombre=${data.nombre}&marca=${data.marca}&tipo=${data.tipo}&precio=${data.precio}`)
+                                .then(res => res.json())
+                                .then(json => {
+                                    if(json.result.affectedRows===1){
+                                        console.log('datos guardado')
+                                    }
+                                })
                             props.event()
                         }}>Insertar</Button>
                     </Grid>

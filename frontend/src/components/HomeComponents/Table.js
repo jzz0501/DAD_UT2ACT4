@@ -7,28 +7,28 @@ export default function Tabla(props) {
     return (
         <TableContainer>
             <Table>
-                <TableHead>
-                    <TableRow>
-                        <TableCell>Operacion</TableCell>
-                        <TableCell>Nombre</TableCell>
-                        <TableCell>Marca</TableCell>
-                        <TableCell>Tipo</TableCell>
-                        <TableCell>Precio</TableCell>
+                <TableHead component="thead">
+                    <TableRow component="tr">
+                        <TableCell component="td">Operacion</TableCell>
+                        <TableCell component="td">Nombre</TableCell>
+                        <TableCell component="td">Marca</TableCell>
+                        <TableCell component="td">Tipo</TableCell>
+                        <TableCell component="td">Precio</TableCell>
                     </TableRow>
                 </TableHead>
-                <TableBody>
+                <TableBody component="tbody">
                     {
                         list.map((row) => {
                             return (
-                                <TableRow>
-                                    <TableCell><Button onClick={() => {
+                                <TableRow component="tr" key={row.id}>
+                                    <TableCell component="td"><Button onClick={() => {
                                         fetch(`http://localhost:3030/delete?id=${row.id}`)
                                         props.updateEvent()
                                     }} variant="contained">Eliminar</Button></TableCell>
-                                    <TableCell component="h1">{row.nombre}</TableCell>
-                                    <TableCell>{row.marca}</TableCell>
-                                    <TableCell>{row.tipo}</TableCell>
-                                    <TableCell>{row.precio}</TableCell>
+                                    <TableCell component="td">{row.nombre}</TableCell>
+                                    <TableCell component="td">{row.marca}</TableCell>
+                                    <TableCell component="td">{row.tipo}</TableCell>
+                                    <TableCell component="td">{row.precio}</TableCell>
                                 </TableRow>
                             )
                         })
