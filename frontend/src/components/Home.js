@@ -15,12 +15,12 @@ export default function Home() {
         const initList = []
         fetch(`http://localhost:3030/data`)
             .then(res => res.json())
-            .then(json => json.rows.forEach(element => {
-                initList.push(element)
-            }))
-        setTimeout(() => {
-            setList(initList)
-        },200)
+            .then(json => {
+                json.rows.forEach(element => {
+                    initList.push(element)
+                })
+                setList(initList)
+            })
     },[control])
 
     
