@@ -5,7 +5,6 @@ import Tabla from "./HomeComponents/Table";
 import { useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
 
-
 export default function Home() {
     
     const [list, setList] = useState([])
@@ -34,7 +33,6 @@ export default function Home() {
             navigate('/')
         }
     }, [isLoggedin, navigate])
-
 
     const update = () => {
         setControl(control+1)

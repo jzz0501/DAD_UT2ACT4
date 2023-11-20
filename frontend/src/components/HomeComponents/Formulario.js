@@ -28,7 +28,7 @@ export default function Formulario(props) {
                         <TextField type="precio" value={data.precio} placeholder="precio" onChange={(event) => setData({...data, precio: event.target.value})}></TextField>
                     </Grid>
                     <Grid>
-                        <Button variant="contained" style={{marginTop: 20}} onClick={() => {
+                        <Button variant="contained" type="submit" style={{marginTop: 20}} onClick={() => {
                             fetch(`http://localhost:3030/insert?nombre=${data.nombre}&marca=${data.marca}&tipo=${data.tipo}&precio=${data.precio}`)
                                 .then(res => res.json())
                                 .then(json => {
