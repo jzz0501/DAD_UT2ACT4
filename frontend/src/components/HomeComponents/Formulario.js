@@ -33,7 +33,7 @@ export default function Formulario(props) {
                                 .then(res => res.json())
                                 .then(json => {
                                     if(json.result.affectedRows===1){
-                                        console.log('datos guardado')
+                                        alert('datos guardado')
                                     }
                                 })
                             props.event()
